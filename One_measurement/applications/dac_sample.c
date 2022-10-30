@@ -26,15 +26,17 @@
 #define REFER_VOLTAGE       330         /* 参考电压 3.3V,数据精度乘以100保留2位小数*/
 #define CONVERT_BITS        (1 << 12)   /* 转换位数为12位 */
 
-#define ADC_DEV_NAME        "adc1"      /* ADC 设备名称 */
-#define ADC_DEV_CHANNEL     13           /* ADC 通道 */
+#define ADC_DEV_NAME1        "adc1"      /* ADC 设备名称 */
+#define ADC_DEV_CHANNEL1     13           /* ADC 通道 */
+#define ADC_DEV_NAME2        "adc2"      /* ADC 设备名称 */
+#define ADC_DEV_CHANNEL2     6           /* ADC 通道 */
 
 
 static int vol_read_sample(int argc, char *argv[])
 {
     rt_dac_device_t dac_dev;
-    rt_adc_device_t adc_dev;
-    rt_uint32_t value, vol, kalman_vol, average_vol;
+    rt_adc_device_t adc_dev[2];
+    rt_uint32_t value[2], vol[2], kalman_vol, average_vol;
     rt_err_t ret = RT_EOK;
     rt_uint8_t cnt = 0;
     char buf[20] = {0};
@@ -50,43 +52,48 @@ static int vol_read_sample(int argc, char *argv[])
         rt_kprintf("dac sample run failed! can't find %s device!\n", DAC_DEV_NAME);
         return RT_ERROR;
     }
-    adc_dev = (rt_adc_device_t)rt_device_find(ADC_DEV_NAME);
-    if (adc_dev == RT_NULL)
+    adc_dev[0] = (rt_adc_device_t)rt_device_find(ADC_DEV_NAME1);
+    adc_dev[1] = (rt_adc_device_t)rt_device_find(ADC_DEV_NAME2);
+    if (adc_dev[0] == RT_NULL || adc_dev[1] == RT_NULL)
     {
-        rt_kprintf("adc sample run failed! can't find %s device!\n", ADC_DEV_NAME);
+        rt_kprintf("adc sample run failed! can't find %s device!\n", ADC_DEV_NAME1);
         return RT_ERROR;
     }
 
     /* 打开设备 */
     ret = rt_dac_enable(dac_dev, DAC_DEV_CHANNEL);
-    ret = rt_adc_enable(adc_dev, ADC_DEV_CHANNEL);
+    ret = rt_adc_enable(adc_dev[0], ADC_DEV_CHANNEL1);
+    ret = rt_adc_enable(adc_dev[1], ADC_DEV_CHANNEL2);
 
     /* 设置输出值 */
-    value = 3000;
-    rt_dac_write(dac_dev, DAC_DEV_CHANNEL, value);
-    rt_kprintf("the value is :%d \n", value);
+    value[0] = 3000;
+    rt_dac_write(dac_dev, DAC_DEV_CHANNEL, value[0]);
+    rt_kprintf("the value is :%d \n", value[0]);
 
     /* 转换为对应电压值 */
-    vol = value * REFER_VOLTAGE / CONVERT_BITS;
-    rt_kprintf("the voltage is :%d.%02d \n", vol / 100, vol % 100);
+    vol[0] = value[0] * REFER_VOLTAGE / CONVERT_BITS;
+    rt_kprintf("the voltage is :%d.%02d \n", vol[0] / 100, vol[0] % 100);
 
     while(1)
     {
         /* 读取ADC值 */
-        value = rt_adc_read(adc_dev, ADC_DEV_CHANNEL);
+        value[0] = rt_adc_read(adc_dev[0], ADC_DEV_CHANNEL1);
+        value[1] = rt_adc_read(adc_dev[1], ADC_DEV_CHANNEL2);
         // rt_kprintf("the adc value is :%d \n", value);
         /* 转换为对应电压值 */
-        vol = value * REFER_VOLTAGE / CONVERT_BITS;
-        kalman_vol = KalmanFilter(&kfp, vol);
-        average_vol = (rt_uint32_t)average_filter(&afp, (float)vol);
-        // rt_kprintf("the adc voltage is :%d.%02d \n", vol / 100, vol % 100);
-        rt_kprintf("%d.%02d, %d.%02d, %d.%02d\n", vol / 100, vol % 100, kalman_vol / 100, kalman_vol % 100, average_vol / 100, average_vol % 100);
+        vol[0] = value[0] * REFER_VOLTAGE / CONVERT_BITS;
+        vol[1] = value[1] * REFER_VOLTAGE / CONVERT_BITS;
+        rt_kprintf("%d.%02d,%d.%02d \n", vol[0] / 100, vol[0] % 100, vol[1] / 100, vol[1] % 100);
+        // kalman_vol = KalmanFilter(&kfp, vol);
+        // average_vol = (rt_uint32_t)average_filter(&afp, (float)vol);
+        // // rt_kprintf("the adc voltage is :%d.%02d \n", vol / 100, vol % 100);
+        // rt_kprintf("%d.%02d, %d.%02d, %d.%02d\n", vol / 100, vol % 100, kalman_vol / 100, kalman_vol % 100, average_vol / 100, average_vol % 100);
         rt_thread_mdelay(200);
     }
 
     return ret;
 }
 /* 导出到 msh 命令列表中 */
-MSH_CMD_EXPORT(vol_read_sample, voltage convert and read sample);
+// MSH_CMD_EXPORT(vol_read_sample, voltage convert and read sample);
 // 导出到init
-// INIT_APP_EXPORT(vol_read_sample);
+INIT_APP_EXPORT(vol_read_sample);
