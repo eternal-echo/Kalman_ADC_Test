@@ -1,0 +1,122 @@
+23:10:08 **** Incremental Build of configuration Debug for project One_measurement ****
+make -j8 all 
+linking...
+./libraries/HAL_Drivers/drv_dac.o: In function `stm32_set_dac_value':
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:112: undefined reference to `HAL_DAC_ConfigChannel'
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:118: undefined reference to `HAL_DAC_SetValue'
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:124: undefined reference to `HAL_DAC_Start'
+./libraries/HAL_Drivers/drv_dac.o: In function `stm32_dac_init':
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:164: undefined reference to `HAL_DAC_Init'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:60: rtthread.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+23:10:25 **** Clean-only build of configuration Debug for project One_measurement ****
+make -j8 clean2 
+rm -rf  rtthread.bin  rtthread.siz  ./rt-thread/libcpu/arm/cortex-m4/context_gcc.d  ./rt-thread/src/clock.d ./rt-thread/src/components.d ./rt-thread/src/device.d ./rt-thread/src/idle.d ./rt-thread/src/ipc.d ./rt-thread/src/irq.d ./rt-thread/src/kservice.d ./rt-thread/src/memheap.d ./rt-thread/src/mempool.d ./rt-thread/src/object.d ./rt-thread/src/scheduler.d ./rt-thread/src/thread.d ./rt-thread/src/timer.d  ./rt-thread/libcpu/arm/cortex-m4/cpuport.d  ./rt-thread/libcpu/arm/common/backtrace.d ./rt-thread/libcpu/arm/common/div0.d ./rt-thread/libcpu/arm/common/showmem.d  ./rt-thread/components/libc/compilers/newlib/syscalls.d  ./rt-thread/components/libc/compilers/common/stdlib.d ./rt-thread/components/libc/compilers/common/time.d  ./rt-thread/components/finsh/cmd.d ./rt-thread/components/finsh/msh.d ./rt-thread/components/finsh/shell.d  ./rt-thread/components/drivers/serial/serial.d  ./rt-thread/components/drivers/misc/dac.d ./rt-thread/components/drivers/misc/pin.d  ./rt-thread/components/drivers/ipc/completion.d ./rt-thread/components/drivers/ipc/dataqueue.d ./rt-thread/components/drivers/ipc/pipe.d ./rt-thread/components/drivers/ipc/ringblk_buf.d ./rt-thread/components/drivers/ipc/ringbuffer.d ./rt-thread/components/drivers/ipc/waitqueue.d ./rt-thread/components/drivers/ipc/workqueue.d  ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.d  ./libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.d  ./libraries/HAL_Drivers/drv_common.d ./libraries/HAL_Drivers/drv_dac.d ./libraries/HAL_Drivers/drv_gpio.d ./libraries/HAL_Drivers/drv_usart.d  ./board/CubeMX_Config/Src/stm32f4xx_hal_msp.d  ./board/board.d  ./applications/dac_sample.d ./applications/main.d 
+rm -rf  ./rt-thread/src/clock.o ./rt-thread/src/components.o ./rt-thread/src/device.o ./rt-thread/src/idle.o ./rt-thread/src/ipc.o ./rt-thread/src/irq.o ./rt-thread/src/kservice.o ./rt-thread/src/memheap.o ./rt-thread/src/mempool.o ./rt-thread/src/object.o ./rt-thread/src/scheduler.o ./rt-thread/src/thread.o ./rt-thread/src/timer.o  ./rt-thread/libcpu/arm/cortex-m4/context_gcc.o ./rt-thread/libcpu/arm/cortex-m4/cpuport.o  ./rt-thread/libcpu/arm/common/backtrace.o ./rt-thread/libcpu/arm/common/div0.o ./rt-thread/libcpu/arm/common/showmem.o  ./rt-thread/components/libc/compilers/newlib/syscalls.o  ./rt-thread/components/libc/compilers/common/stdlib.o ./rt-thread/components/libc/compilers/common/time.o  ./rt-thread/components/finsh/cmd.o ./rt-thread/components/finsh/msh.o ./rt-thread/components/finsh/shell.o  ./rt-thread/components/drivers/serial/serial.o  ./rt-thread/components/drivers/misc/dac.o ./rt-thread/components/drivers/misc/pin.o  ./rt-thread/components/drivers/ipc/completion.o ./rt-thread/components/drivers/ipc/dataqueue.o ./rt-thread/components/drivers/ipc/pipe.o ./rt-thread/components/drivers/ipc/ringblk_buf.o ./rt-thread/components/drivers/ipc/ringbuffer.o ./rt-thread/components/drivers/ipc/waitqueue.o ./rt-thread/components/drivers/ipc/workqueue.o  ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.o  ./libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f429xx.o  ./libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o  ./libraries/HAL_Drivers/drv_common.o ./libraries/HAL_Drivers/drv_dac.o ./libraries/HAL_Drivers/drv_gpio.o ./libraries/HAL_Drivers/drv_usart.o  ./board/CubeMX_Config/Src/stm32f4xx_hal_msp.o  ./board/board.o  ./applications/dac_sample.o ./applications/main.o  *.elf
+ 
+23:10:29 **** Build of configuration Debug for project One_measurement ****
+make -j8 all 
+arm-none-eabi-gcc "../rt-thread/src/clock.c"
+arm-none-eabi-gcc "../rt-thread/src/components.c"
+arm-none-eabi-gcc "../rt-thread/src/device.c"
+arm-none-eabi-gcc "../rt-thread/src/idle.c"
+arm-none-eabi-gcc "../rt-thread/src/ipc.c"
+arm-none-eabi-gcc "../rt-thread/src/irq.c"
+arm-none-eabi-gcc "../rt-thread/src/kservice.c"
+arm-none-eabi-gcc "../rt-thread/src/memheap.c"
+arm-none-eabi-gcc "../rt-thread/src/mempool.c"
+arm-none-eabi-gcc "../rt-thread/src/object.c"
+arm-none-eabi-gcc "../rt-thread/src/scheduler.c"
+arm-none-eabi-gcc "../rt-thread/src/thread.c"
+arm-none-eabi-gcc "../rt-thread/src/timer.c"
+arm-none-eabi-gcc "../rt-thread/libcpu/arm/cortex-m4/context_gcc.S"
+arm-none-eabi-gcc "../rt-thread/libcpu/arm/cortex-m4/cpuport.c"
+arm-none-eabi-gcc "../rt-thread/libcpu/arm/common/backtrace.c"
+arm-none-eabi-gcc "../rt-thread/libcpu/arm/common/div0.c"
+arm-none-eabi-gcc "../rt-thread/libcpu/arm/common/showmem.c"
+arm-none-eabi-gcc "../rt-thread/components/libc/compilers/newlib/syscalls.c"
+arm-none-eabi-gcc "../rt-thread/components/libc/compilers/common/stdlib.c"
+arm-none-eabi-gcc "../rt-thread/components/libc/compilers/common/time.c"
+arm-none-eabi-gcc "../rt-thread/components/finsh/cmd.c"
+arm-none-eabi-gcc "../rt-thread/components/finsh/msh.c"
+arm-none-eabi-gcc "../rt-thread/components/finsh/shell.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/serial/serial.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/misc/dac.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/misc/pin.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/ipc/completion.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/ipc/dataqueue.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/ipc/pipe.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/ipc/ringblk_buf.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/ipc/ringbuffer.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/ipc/waitqueue.c"
+arm-none-eabi-gcc "../rt-thread/components/drivers/ipc/workqueue.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f429xx.s"
+arm-none-eabi-gcc "../libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"
+arm-none-eabi-gcc "../libraries/HAL_Drivers/drv_common.c"
+arm-none-eabi-gcc "../libraries/HAL_Drivers/drv_dac.c"
+arm-none-eabi-gcc "../libraries/HAL_Drivers/drv_gpio.c"
+arm-none-eabi-gcc "../libraries/HAL_Drivers/drv_usart.c"
+arm-none-eabi-gcc "../board/CubeMX_Config/Src/stm32f4xx_hal_msp.c"
+arm-none-eabi-gcc "../board/board.c"
+arm-none-eabi-gcc "../applications/dac_sample.c"
+../libraries/HAL_Drivers/drv_common.c:20:13: warning: 'reboot' defined but not used [-Wunused-function]
+ static void reboot(uint8_t argc, char **argv)
+             ^
+arm-none-eabi-gcc "../applications/main.c"
+../libraries/HAL_Drivers/drv_dac.c: In function 'stm32_dac_enabled':
+../libraries/HAL_Drivers/drv_dac.c:37:24: warning: variable 'stm32_dac_handler' set but not used [-Wunused-but-set-variable]
+     DAC_HandleTypeDef *stm32_dac_handler;
+                        ^
+../libraries/HAL_Drivers/drv_dac.c: In function 'stm32_dac_disabled':
+../libraries/HAL_Drivers/drv_dac.c:50:24: warning: variable 'stm32_dac_handler' set but not used [-Wunused-but-set-variable]
+     DAC_HandleTypeDef *stm32_dac_handler;
+                        ^
+../libraries/HAL_Drivers/drv_dac.c: At top level:
+../libraries/HAL_Drivers/drv_dac.c:61:20: warning: 'stm32_dac_get_channel' defined but not used [-Wunused-function]
+ static rt_uint32_t stm32_dac_get_channel(rt_uint32_t channel)
+                    ^
+../libraries/HAL_Drivers/drv_dac.c: In function 'stm32_set_dac_value':
+../libraries/HAL_Drivers/drv_dac.c:112:9: warning: 'dac_channel' is used uninitialized in this function [-Wuninitialized]
+     if (HAL_DAC_ConfigChannel(stm32_dac_handler, &DAC_ChanConf, dac_channel) != HAL_OK)
+         ^
+../applications/dac_sample.c: In function 'dac_vol_sample':
+../applications/dac_sample.c:45:44: warning: passing argument 3 of 'rt_dac_write' makes integer from pointer without a cast [-Wint-conversion]
+     rt_dac_write(dac_dev, DAC_DEV_CHANNEL, &value);
+                                            ^
+In file included from E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\rt-thread\components\drivers\include/rtdevice.h:121:0,
+                 from ../applications/dac_sample.c:19:
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\rt-thread\components\drivers\include/drivers/dac.h:38:13: note: expected 'rt_uint32_t {aka unsigned int}' but argument is of type 'rt_uint32_t * {aka unsigned int *}'
+ rt_uint32_t rt_dac_write(rt_dac_device_t dev, rt_uint32_t channel, rt_uint32_t value);
+             ^
+linking...
+./libraries/HAL_Drivers/drv_dac.o: In function `stm32_set_dac_value':
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:112: undefined reference to `HAL_DAC_ConfigChannel'
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:118: undefined reference to `HAL_DAC_SetValue'
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:124: undefined reference to `HAL_DAC_Start'
+./libraries/HAL_Drivers/drv_dac.o: In function `stm32_dac_init':
+E:\embeded\project\kalman\study\Experiment\One_measurement\One_measurement\Debug/../libraries/HAL_Drivers/drv_dac.c:164: undefined reference to `HAL_DAC_Init'
+collect2.exe: error: ld returned 1 exit status
+make: *** [makefile:72: rtthread.elf] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+16:30:15 **** Clean-only build of configuration Debug for project One_measurement ****
+make -j8 clean2 
+rm -rf  rtthread.bin  rtthread.siz  ./rt-thread/libcpu/arm/cortex-m4/context_gcc.d  ./rt-thread/src/clock.d ./rt-thread/src/components.d ./rt-thread/src/device.d ./rt-thread/src/idle.d ./rt-thread/src/ipc.d ./rt-thread/src/irq.d ./rt-thread/src/kservice.d ./rt-thread/src/memheap.d ./rt-thread/src/mempool.d ./rt-thread/src/object.d ./rt-thread/src/scheduler.d ./rt-thread/src/thread.d ./rt-thread/src/timer.d  ./rt-thread/libcpu/arm/cortex-m4/cpuport.d  ./rt-thread/libcpu/arm/common/backtrace.d ./rt-thread/libcpu/arm/common/div0.d ./rt-thread/libcpu/arm/common/showmem.d  ./rt-thread/components/libc/compilers/newlib/syscalls.d  ./rt-thread/components/libc/compilers/common/stdlib.d ./rt-thread/components/libc/compilers/common/time.d  ./rt-thread/components/finsh/cmd.d ./rt-thread/components/finsh/msh.d ./rt-thread/components/finsh/shell.d  ./rt-thread/components/drivers/serial/serial.d  ./rt-thread/components/drivers/misc/dac.d ./rt-thread/components/drivers/misc/pin.d  ./rt-thread/components/drivers/ipc/completion.d ./rt-thread/components/drivers/ipc/dataqueue.d ./rt-thread/components/drivers/ipc/pipe.d ./rt-thread/components/drivers/ipc/ringblk_buf.d ./rt-thread/components/drivers/ipc/ringbuffer.d ./rt-thread/components/drivers/ipc/waitqueue.d ./rt-thread/components/drivers/ipc/workqueue.d  ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.d  ./libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.d  ./libraries/HAL_Drivers/drv_common.d ./libraries/HAL_Drivers/drv_dac.d ./libraries/HAL_Drivers/drv_gpio.d ./libraries/HAL_Drivers/drv_usart.d  ./board/CubeMX_Config/Src/stm32f4xx_hal_msp.d  ./board/board.d  ./applications/dac_sample.d ./applications/main.d 
+rm -rf  ./rt-thread/src/clock.o ./rt-thread/src/components.o ./rt-thread/src/device.o ./rt-thread/src/idle.o ./rt-thread/src/ipc.o ./rt-thread/src/irq.o ./rt-thread/src/kservice.o ./rt-thread/src/memheap.o ./rt-thread/src/mempool.o ./rt-thread/src/object.o ./rt-thread/src/scheduler.o ./rt-thread/src/thread.o ./rt-thread/src/timer.o  ./rt-thread/libcpu/arm/cortex-m4/context_gcc.o ./rt-thread/libcpu/arm/cortex-m4/cpuport.o  ./rt-thread/libcpu/arm/common/backtrace.o ./rt-thread/libcpu/arm/common/div0.o ./rt-thread/libcpu/arm/common/showmem.o  ./rt-thread/components/libc/compilers/newlib/syscalls.o  ./rt-thread/components/libc/compilers/common/stdlib.o ./rt-thread/components/libc/compilers/common/time.o  ./rt-thread/components/finsh/cmd.o ./rt-thread/components/finsh/msh.o ./rt-thread/components/finsh/shell.o  ./rt-thread/components/drivers/serial/serial.o  ./rt-thread/components/drivers/misc/dac.o ./rt-thread/components/drivers/misc/pin.o  ./rt-thread/components/drivers/ipc/completion.o ./rt-thread/components/drivers/ipc/dataqueue.o ./rt-thread/components/drivers/ipc/pipe.o ./rt-thread/components/drivers/ipc/ringblk_buf.o ./rt-thread/components/drivers/ipc/ringbuffer.o ./rt-thread/components/drivers/ipc/waitqueue.o ./rt-thread/components/drivers/ipc/workqueue.o  ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o ./libraries/STM32F4xx_HAL/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.o  ./libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/gcc/startup_stm32f429xx.o  ./libraries/STM32F4xx_HAL/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.o  ./libraries/HAL_Drivers/drv_common.o ./libraries/HAL_Drivers/drv_dac.o ./libraries/HAL_Drivers/drv_gpio.o ./libraries/HAL_Drivers/drv_usart.o  ./board/CubeMX_Config/Src/stm32f4xx_hal_msp.o  ./board/board.o  ./applications/dac_sample.o ./applications/main.o  *.elf
+ 

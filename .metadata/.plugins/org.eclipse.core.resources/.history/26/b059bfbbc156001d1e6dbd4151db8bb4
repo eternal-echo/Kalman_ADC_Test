@@ -1,0 +1,61 @@
+/*
+ * Copyright (c) 2006-2021, RT-Thread Development Team
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Change Logs:
+ * Date           Author       Notes
+ * 2022-10-28     袁雨       the first version
+ */
+/*
+ * 程序清单： DAC 设备使用例程
+ * 例程导出了 dac_sample 命令到控制终端
+ * 命令调用格式：dac_sample
+ * 程序功能：通过 DAC 设备将数字值转换为模拟量，并输出电压值。
+ *           示例代码参考电压为3.3V,转换位数为12位。
+*/
+
+#include <rtthread.h>
+#include <rtdevice.h>
+#include <stdlib.h>
+#define DAC_DEV_NAME        "dac1"  /* DAC 设备名称 */
+#define DAC_DEV_CHANNEL     1       /* DAC 通道 */
+#define REFER_VOLTAGE       330         /* 参考电压 3.3V,数据精度乘以100保留2位小数*/
+#define CONVERT_BITS        (1 << 12)   /* 转换位数为12位 */
+
+static int dac_vol_sample(int argc, char *argv[])
+{
+    rt_dac_device_t dac_dev;
+    rt_uint32_t value, vol;
+    rt_err_t ret = RT_EOK;
+
+    /* 查找设备 */
+    dac_dev = (rt_dac_device_t)rt_device_find(DAC_DEV_NAME);
+    if (dac_dev == RT_NULL)
+    {
+        rt_kprintf("dac sample run failed! can't find %s device!\n", DAC_DEV_NAME);
+        return RT_ERROR;
+    }
+
+    /* 打开通道 */
+    ret = rt_dac_enable(dac_dev, DAC_DEV_CHANNEL);
+
+    /* 设置输出值 */
+    value = atoi(argv[1]);
+    rt_dac_write(dac_dev, DAC_DEV_NAME, DAC_DEV_CHANNEL, &value);
+    rt_kprintf("the value is :%d \n", value);
+
+    /* 转换为对应电压值 */
+    vol = value * REFER_VOLTAGE / CONVERT_BITS;
+    rt_kprintf("the voltage is :%d.%02d \n", vol / 100, vol % 100);
+
+    /* 延时查看效果，关闭通道后无输出 */
+    rt_thread_mdelay(500);
+
+    /* 关闭通道 */
+    ret = rt_dac_disable(dac_dev, DAC_DEV_CHANNEL);
+
+    return ret;
+}
+/* 导出到 msh 命令列表中 */
+MSH_CMD_EXPORT(dac_vol_sample, dac voltage convert sample);

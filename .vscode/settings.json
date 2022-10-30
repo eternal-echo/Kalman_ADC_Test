@@ -1,0 +1,15 @@
+{
+    "files.associations": {
+        "*.ino": "cpp",
+        "drv_config.h": "c",
+        "drv_log.h": "c",
+        "main.h": "c",
+        "board.h": "c",
+        "rtthread.h": "c",
+        "stm32f4xx.h": "c",
+        "stm32f4xx_hal.h": "c",
+        "stm32f4xx_hal_dac.h": "c",
+        "STM32F4XX_HAL_DAC.H": "cpp",
+        "kalman.h": "c"
+    }
+}
