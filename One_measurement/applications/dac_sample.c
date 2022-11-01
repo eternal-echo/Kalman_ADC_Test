@@ -83,7 +83,8 @@ static int vol_read_sample(int argc, char *argv[])
         /* 转换为对应电压值 */
         vol[0] = value[0] * REFER_VOLTAGE / CONVERT_BITS;
         vol[1] = value[1] * REFER_VOLTAGE / CONVERT_BITS;
-        rt_kprintf("%d.%02d,%d.%02d \n", vol[0] / 100, vol[0] % 100, vol[1] / 100, vol[1] % 100);
+        /* 输入两个传感器的测量值至卡尔曼滤波器 */
+        // rt_kprintf("%d.%02d,%d.%02d \n", vol[0] / 100, vol[0] % 100, vol[1] / 100, vol[1] % 100);
         // kalman_vol = KalmanFilter(&kfp, vol);
         // average_vol = (rt_uint32_t)average_filter(&afp, (float)vol);
         // // rt_kprintf("the adc voltage is :%d.%02d \n", vol / 100, vol % 100);
